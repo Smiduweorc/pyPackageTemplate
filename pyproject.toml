@@ -23,7 +23,7 @@ Repository = "https://github.com/grMLEqomlkkU5Eeinz4brIrOVCUCkJuN/mypackage"
 dev = [
     "mypy>=1.10",
     "ruff>=0.4",
-    "lefthook>=1.7",
+    "lefthook>=2.1.9",
     "git-cliff>=2.13.1",
 ]
 
