@@ -21,7 +21,7 @@ Repository = "https://github.com/grMLEqomlkkU5Eeinz4brIrOVCUCkJuN/mypackage"
 # hooks (lefthook) and changelog generation (git-cliff). Install with
 #   pip install -e ".[dev]"
 dev = [
-    "ruff>=0.15.18",
+    "ruff>=0.15.19",
     "mypy>=2.1.0",
     "ruff>=0.4",
     "lefthook>=2.1.9",
