@@ -17,13 +17,9 @@ dependencies = []
 Repository = "https://github.com/grMLEqomlkkU5Eeinz4brIrOVCUCkJuN/mypackage"
 
 [project.optional-dependencies]
-# Everything needed for local development: type checking, lint/format, git
-# hooks (lefthook) and changelog generation (git-cliff). Install with
-#   pip install -e ".[dev]"
 dev = [
     "ruff>=0.16.0",
     "mypy>=2.3.0",
-    "ruff>=0.4",
     "lefthook>=2.1.10",
     "git-cliff>=2.13.1",
 ]
@@ -31,33 +27,22 @@ dev = [
 [tool.hatch.build.targets.wheel]
 packages = ["mypackage"]
 
-# --- Type checking ---
 [tool.mypy]
 strict = true
 python_version = "3.12"
 files = ["mypackage"]
 
-# --- Linting & formatting ---
 [tool.ruff]
 target-version = "py312"
 line-length = 88
 
 [tool.ruff.lint]
-select = [
-    "E",   # pycodestyle errors
-    "F",   # pyflakes
-    "I",   # isort
-    "UP",  # pyupgrade
-    "ANN", # flake8-annotations (enforce type hints)
-    "B",   # flake8-bugbear
-    "SIM", # flake8-simplify
-]
+select = ["E", "F", "I", "UP", "ANN", "B", "SIM"]
 
 [tool.ruff.format]
 indent-style = "tab"
 
 [tool.ruff.lint.per-file-ignores]
-# Test methods don't need return-type annotations.
 "tests/**" = ["ANN"]
 
 [tool.ruff.lint.isort]

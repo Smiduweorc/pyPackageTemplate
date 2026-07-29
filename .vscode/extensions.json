@@ -2,7 +2,6 @@
 	"recommendations": [
 		"charliermarsh.ruff",
 		"ms-python.python",
-		"ms-python.mypy-type-checker",
-		"Gruntfuggly.todo-tree"
+		"ms-python.mypy-type-checker"
 	]
 }

@@ -15,15 +15,8 @@ build/
 venv/
 env/
 
-# Type checking
+# Tool caches
 .mypy_cache/
-
-# Testing
-.pytest_cache/
-.coverage
-htmlcov/
-
-# Ruff
 .ruff_cache/
 
 # IDE

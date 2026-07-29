@@ -1,1 +1,3 @@
-from .greet import *  # noqa: F403
+from .greet import greet
+
+__all__ = ["greet"]
