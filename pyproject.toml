@@ -18,7 +18,7 @@ Repository = "https://github.com/grMLEqomlkkU5Eeinz4brIrOVCUCkJuN/mypackage"
 
 [project.optional-dependencies]
 dev = [
-    "ruff>=0.16.10",
+    "ruff>=0.17.0",
     "mypy>=2.4.0",
     "lefthook>=2.1.17",
     "git-cliff>=2.14.2",
