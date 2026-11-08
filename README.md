@@ -1,62 +1,39 @@
 # mypackage
 
-A typed Python library template: hatchling packaging, mypy in strict mode, ruff
-for lint and format, stdlib `unittest`, conventional commits with git-cliff
-changelogs, lefthook git hooks, and GitHub Actions for lint and tests.
+A template for a typed Python library: hatchling, mypy in strict mode, ruff
+for lint and format, stdlib `unittest`, git-cliff and lefthook. Python 3.12 or
+later; CI tests 3.12 and 3.13 on Linux, macOS and Windows.
 
-Publishing is left manual (custom registry settings), so there's no publish
-workflow here, only a `release.sh` that bumps the version, regenerates the
-changelog, and tags.
+## Starting from it
 
-## Getting started
-
-1. Copy this directory, then rename the package:
-   - rename the `mypackage/` directory,
-   - update `name`, `description`, `[project.urls]`, `[tool.hatch...packages]`,
-     `[tool.mypy] files`, and `[tool.ruff.lint.isort] known-first-party` in
-     `pyproject.toml`,
-   - update the import in `tests/greet.py`.
-2. Create a virtual environment and install the dev dependencies:
+1. Copy the directory and rename the package: the `mypackage/` directory,
+   then `name`, `description`, `[project.urls]`, `packages` under
+   `[tool.hatch.build.targets.wheel]`, `[tool.mypy] files` and
+   `[tool.ruff.lint.isort] known-first-party` in `pyproject.toml`, and the
+   import in `tests/greet.py`.
+2. Make a virtual environment and install the dev dependencies:
    ```bash
    python -m venv .venv
    source .venv/bin/activate        # Windows: .venv\Scripts\activate
    pip install -e ".[dev]"
    ```
-3. `git init` (if needed), then `lefthook install` to enable the hooks.
-4. Replace `mypackage/greet.py` with your code and update the re-exports in
-   `mypackage/__init__.py`.
+3. `git init`, then `lefthook install`.
+4. Replace `mypackage/greet.py` and its re-export in `mypackage/__init__.py`.
 
-## Commands
+There is no publish workflow. Build with `python -m build` or `hatch build`
+(neither is in the dev dependencies) and upload with your own registry
+settings.
 
-| Command | What it does |
-| --- | --- |
-| `python -m unittest discover -s tests -p "*.py"` | Run the test suite. |
-| `python -m unittest tests.greet` | Run a single test module. |
-| `mypy` | Type-check the package (strict). |
-| `ruff check .` | Lint. |
-| `ruff format .` | Format with tabs. |
-| `git-cliff -o CHANGELOG.md` | Regenerate the changelog. |
-| `./release.sh v[X.Y.Z]` | Bump version, regenerate changelog, commit, tag. |
+Commits follow Conventional Commits and `./release.sh v1.2.0` cuts a release;
+[black-garden-ants](https://github.com/Smiduweorc/black-garden-ants) explains
+both. Here the commit-msg hook is a regex in `lefthook.yml`, and this
+`release.sh` is an older one that takes only an explicit version.
 
-Test modules are named after the area they cover (e.g. `greet.py`) rather than
-`test_*.py`, so discovery needs the explicit `-p "*.py"` pattern.
+## Known quirks
 
-## Commits
-
-Commits follow [Conventional Commits](https://www.conventionalcommits.org)
-(`feat:`, `fix:`, `chore:`, ...). The commit-msg hook checks the format with a
-regex, so there's no Node toolchain involved. Pre-commit runs `ruff check`,
-`ruff format --check` on staged Python files and `mypy` on the package.
-
-## Releasing
-
-`./release.sh v[X.Y.Z]` bumps the `version` in `pyproject.toml`, regenerates
-`CHANGELOG.md`, commits as `chore(release): prepare for v[X.Y.Z]`, and creates
-an annotated tag whose message is the changelog for the new version. Then run
-`git push && git push --tags`.
-
-Build with `python -m build` (or `hatch build`) and upload with whatever
-registry settings you use.
+- Test modules are named after the area they cover (`greet.py`), not
+  `test_*.py`, so discovery needs the pattern:
+  `python -m unittest discover -s tests -p "*.py"`.
 
 ## License
 

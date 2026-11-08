@@ -1,16 +1,13 @@
 ---
 name: Feature request
-about: Suggest an idea for this project
+about: Suggest a change to the Python library template
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+Anything here ends up in every project made from the template, so it should be
+something most of them need.
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+**What you would add or change**
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+**Which projects you made from the template needed it, and what you did there**
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+**What it costs a project that does not need it**

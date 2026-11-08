@@ -1,26 +1,19 @@
 ---
 name: Bug report
-about: Create a report to help us improve
+about: Part of the Python library template does not work
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+**Which part**
 
-**To Reproduce**
-Steps to reproduce the behavior:
+[e.g. tests, mypy, ruff, git hooks, CI, release.sh]
 
-1. Go to '...'
-2. Run '....'
-3. See error
+**What you ran, and the full output**
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+**What you expected**
 
-**Environment (please complete the following information):**
+**Environment**
 
-- OS: [e.g. Ubuntu 24.04, Windows 11, macOS 15]
 - Python version: [e.g. 3.12.4]
-- Package version: [e.g. 1.0.0]
-
-**Additional context**
-Add any other context about the problem here.
+- How you installed the dev tools: [e.g. pip install -e ".[dev]" in a venv]
+- OS: [e.g. Ubuntu 24.04, Windows 11, macOS 15]
+- Template commit: [`git rev-parse --short HEAD`]
